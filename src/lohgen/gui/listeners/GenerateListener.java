@@ -11,13 +11,29 @@ public class GenerateListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Generator gen = new Generator(Integer.parseInt(delayText.getText()));
-        gen.generateList();
-        //gen.printList();
-        gen.generateFile();
+        if (checkInput()) {
+            Generator gen = new Generator(Integer.parseInt(delayText.getText()));
+            gen.generateList();
+            switch (e.getActionCommand()) {
+                case "text":
+                    gen.generateText();
+                    break;
+                case "install":
+                    gen.install();
+                    break;
+                case "import":
+                    gen.generateImport();
+                    break;
+            }
+        }
     }
 
     public static void setDelayText(NumericTextField delayText) {
         GenerateListener.delayText = delayText;
+    }
+
+    private boolean checkInput() {
+        //TODO add limits/checks
+        return true;
     }
 }

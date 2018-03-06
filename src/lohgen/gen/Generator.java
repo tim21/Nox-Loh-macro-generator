@@ -3,6 +3,7 @@ package lohgen.gen;
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import lohgen.Consts;
@@ -28,12 +29,36 @@ public class Generator {
         list.print();
     }
 
-    public void generateFile() {
+    public void generateFile(String name) {
         try {
-            Files.write(Consts.FILENAME, list, Charset.forName("UTF-8"));
+            Files.write(Paths.get(name), list, Charset.forName("UTF-8"));
         } catch (IOException ex) {
             Logger.getLogger(Generator.class.getName()).log(Level.SEVERE, "file error", ex);
         }
+    }
+
+    public void generateText() {
+        generateFile(Consts.TEXT_FILE_NAME);
+    }
+
+    public void install() {
+    }
+
+    public void generateImport() {
+//        String json = null;
+//        try {
+//            //File tmp_folder = new File(Consts.TMP_FOLDER_NAME);
+//            //tmp_folder.mkdir();
+//            json = new String(Files.readAllBytes(Paths.get("records")));
+//        } catch (IOException ex) {
+//            Logger.getLogger(Generator.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        Gson gson = new Gson();
+//        HashMap records = gson.fromJson(json, HashMap.class);
+//        Set keys = records.keySet();
+//        for (Object key : keys.toArray()) {
+//            System.out.println(key + " : " + records.get((String) key));
+//        }
     }
 
     private void generateHeroClicks() {

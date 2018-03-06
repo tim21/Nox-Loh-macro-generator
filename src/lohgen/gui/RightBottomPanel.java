@@ -30,9 +30,18 @@ public class RightBottomPanel extends JPanel {
         textPanel.add(delayField);
         b.add(textPanel);
         b.add(Box.createGlue());
-        JButton generateButton = new JButton("Generate!");
-        generateButton.addActionListener(new GenerateListener());
-        b.add(generateButton);
+        JButton installButton = new JButton("Auto install !");
+        installButton.setActionCommand("install");
+        installButton.addActionListener(new GenerateListener());
+        b.add(installButton);
+        JButton zipButton = new JButton("Generate import !");
+        zipButton.setActionCommand("import");
+        zipButton.addActionListener(new GenerateListener());
+        b.add(zipButton);
+        JButton textButton = new JButton("Generate text file !");
+        textButton.setActionCommand("text");
+        textButton.addActionListener(new GenerateListener());
+        b.add(textButton);
         add(b);
         setBorder(BorderFactory.createTitledBorder(Consts.BORDER_ETCHEDLINE, "Settings"));
     }

@@ -1,8 +1,6 @@
 package lohgen;
 
 import java.awt.Color;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import javax.swing.BorderFactory;
 import javax.swing.border.Border;
 import javax.swing.border.EtchedBorder;
@@ -11,13 +9,14 @@ import lohgen.gen.ClickPoint;
 public class Consts {
 
     public static final String NAME = "Nox LoH macro generator";
-    public static final String VERSION = "0.3.0";
+    public static final String VERSION = "0.4.0";
 
     public static final int RES_X = 1280;
     public static final int RES_Y = 720;
     public static final int INIT_DELAY = 500;
 
-    public static final Path FILENAME = Paths.get("generated macro.txt");
+    public static final String TEXT_FILE_NAME = "generated macro.txt";
+    public static final String TMP_FOLDER_NAME = "tmp_folder";
 
     public static final Border BORDER_BLACKLINE1 = BorderFactory.createLineBorder(Color.black);
     public static final Border BORDER_BLACKLINE2 = BorderFactory.createLineBorder(Color.black, 2);
