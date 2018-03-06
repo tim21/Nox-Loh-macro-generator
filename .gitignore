@@ -8,3 +8,5 @@ launch4j_log.xml
 manifest.mf
 save.xml
 .nb-gradle/
+mykeys
+*.properties
