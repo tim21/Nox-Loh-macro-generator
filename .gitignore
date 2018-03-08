@@ -8,4 +8,5 @@ manifest.mf
 exe_config.xml
 .nb-gradle/
 mykeys
+mycert.cer
 *.properties

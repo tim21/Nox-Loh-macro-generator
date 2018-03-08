@@ -126,8 +126,9 @@
 		<echo message="Signing the exe."/>
 
 		<exec executable="${launch4j.dir}/sign4j/sign4j.exe">
-			<arg line="java -jar '${jsign.dir}/jsign-2.0.jar' -s mykeys -a ${alias} --storepass ${store_password} ${store.dir}/${store.jar.name}.exe"/>
+			<arg line="signtool sign /s mycert /n ${alias} /fd sha256 /t http://timestamp.verisign.com/scripts/timstamp.dll ${store.dir}/${store.jar.name}.exe"/>
 		</exec>
+
 
 	</target>
 </project>
